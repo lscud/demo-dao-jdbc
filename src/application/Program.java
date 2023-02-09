@@ -10,13 +10,14 @@ import model.entities.Seller;
 public class Program {
 
 	public static void main(String[] args) {
-
-		Department obj = new Department(1, "books");
 		
-		Seller seller = new Seller(21, "bob", "bob@gmail.com", new Date(), 3000.0, obj);
+		SellerDao sellerDao = DaoFactory.createSellerDao(); //dessa forma o eu programa nao cohece a implementação ele sonhece somente a interface
 		
-		SellerDao sellerDao = DaoFactory.crateSellerDao(); //dessa forma o eu programa nao cohece a implementação ele sonhece somente a interface 
+		Seller seller = sellerDao.findById(3); 
+		
 		System.out.println(seller);
+		
+		
 		
 
 	}
